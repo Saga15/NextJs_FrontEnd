@@ -1,0 +1,454 @@
+//Colors
+$primary: #4E1BD9;
+$secondary: #F3EEFE;
+$light: #F5F5F5;
+$border-color: #d2d2d2;
+// Typography
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-weight-lighter: 400;
+$font-weight-light: 500;
+$font-weight-normal: 600;
+$font-weight-bold: 700;
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.2;
+// Headings
+$h1-font-size: $font-size-base * 1.5;
+$h2-font-size: $font-size-base * 1.375;
+$h3-font-size: $font-size-base * 1.25;
+$h4-font-size: $font-size-base * 1.125;
+$h5-font-size: $font-size-base * 1;
+$h6-font-size: $font-size-base * 0.875 !important;
+$headings-line-height: 1.2;
+// Display 1 - 6
+$display-font-sizes: (
+  1: 3.813rem,
+  2: 2.438rem,
+  3: 1.938rem,
+  4: 1.563rem,
+  5: 2rem,
+  6: 2.375rem
+); 
+$input-btn-font-size: $font-size-base;
+$input-btn-padding-y: .875rem;
+$input-btn-padding-x: 1.5rem;
+// horizontal role
+$hr-border-color: rgba($border-color, 1);
+$input-border-color: $border-color;
+
+// css import to override predifined variables
+@import '../../scss/_functions';
+@import '../../scss/_variables';
+
+// custom-theme-colors addition
+$custom-theme-colors: (
+    "altlight":#E0E4EA,
+    "activeBg": #AFFFB6,
+    "greysslate": #17243E,
+    "highLight": #FAAB3C,
+    "greyCharcoal": #23272C,
+    "greysMetal": #343942,
+    "lightPurple": #F3EEFE,
+    "greenCard": #DDFCE0,
+    "orangeCard": #FEF0DB,
+    "blueCard": #EEF4FE,
+    "purpleCard": #F3EEFE,
+    "orangeBadge" : #F8D8AB,
+    "greenBadge" : #AFFFB6,
+    "blueBadge" : #ADCFFF,
+    "purpleBadge" : #DDCBFC,
+    "blueBg" : #135CCA,
+    "lightPink": #D870D8,
+);
+// marging custom theme colors with theme colors
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+// Spacing (padding)
+$spacer: 1rem;
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: ($spacer * .75),
+    4: $spacer,
+    5: ($spacer * 1.5),
+    6: ($spacer * 2),
+    7: ($spacer * 2.5),
+    8: ($spacer * 2.688),
+    9: ($spacer * 3),
+    10: ($spacer * 3.75),
+    11: ($spacer * 6.25),
+    12: ($spacer * 12.5)
+  ),
+  $spacers
+);
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: ();
+// horizontal role spacing and width
+$hr-margin-y: ($spacer * 0.75);
+$hr-border-width: ($border-width * 2) ;
+// Buttons + Forms
+// Buttons
+// For each of Bootstrap's buttons, define text, background, and border color.
+$btn-font-weight: $font-weight-bold;
+$btn-padding-y-sm: $input-btn-padding-y-sm;
+$btn-padding-x-sm: $input-btn-padding-x-sm;
+$btn-font-size-sm: $input-btn-font-size-sm;
+$btn-line-height-sm: $input-btn-line-height-sm;
+$btn-padding-y-lg: $input-btn-padding-y-lg;
+$btn-padding-x-lg: $input-btn-padding-x-lg;
+$btn-font-size-lg: $input-btn-font-size-lg;
+$btn-line-height-lg: $input-btn-line-height-lg;
+$btn-border-width: $input-btn-border-width;
+$btn-box-shadow: inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
+$btn-focus-width: $input-btn-focus-width;
+$btn-focus-box-shadow: $input-btn-focus-box-shadow;
+$btn-disabled-opacity: .32;
+$btn-active-box-shadow: inset 0 3px 5px rgba($black, .125);
+$btn-link-disabled-color: $gray-600;
+$btn-block-spacing-y: .5rem;
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius: $border-radius;
+$btn-border-radius-lg: $border-radius-lg;
+$btn-border-radius-sm: $border-radius-sm;
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+$input-padding-x: .5rem;
+$input-padding-y: .52rem;
+$input-btn-padding-y: .375rem;
+$input-btn-padding-x: .75rem;
+$input-btn-font-size: $font-size-base * 0.875;
+$input-btn-line-height: $line-height-base;
+$input-btn-focus-width: .2rem;
+$input-btn-focus-color: rgba($component-active-bg, .25);
+$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color;
+$input-btn-padding-y-sm: .25rem;
+$input-btn-padding-x-sm: .5rem;
+$input-btn-font-size-sm: $font-size-sm;
+$input-btn-line-height-sm: $line-height-sm;
+$input-btn-padding-y-lg: .5rem;
+$input-btn-padding-x-lg: 1rem;
+$input-btn-font-size-lg: $font-size-lg;
+$input-btn-line-height-lg: $line-height-lg;
+$input-btn-border-width: $border-width;
+// Forms
+$input-font-weight: $font-weight-normal;
+$input-btn-font-size: ($font-size-base * 0.875);
+$input-color: $gray-700;
+$input-border-width: $input-btn-border-width;
+$input-box-shadow: inset 0 1px 1px rgba($black, .075);
+$input-height-border: $input-border-width * 2;
+// Navbar
+$navbar-toggler-padding-y: .25rem;
+$navbar-toggler-padding-x: 1.094rem;
+$navbar-light-active-color: $primary;
+$navbar-light-hover-color: $primary;
+$nav-link-padding-x: 1.094rem;
+$box-shadow: 0px 2px 16px 0px rgba(170, 29, 53, 0.12);
+$box-shadow-lg: 2px 4px 16px 0px rgba(0, 0, 0, 0.08);
+$line-height-lg: 1.2;
+$line-height-sm: 1.2;
+$border-radius: 0.75rem;
+$border-radius-lg: .3rem;
+$border-radius-sm: .2rem;
+// import default bootstrap for compile with current changes
+@import '~bootstrap/scss/bootstrap';
+
+// google font include
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Libre Franklin", sans-serif;
+    color: #17243E;
+}
+
+.btn {
+  &.customButton {
+    border-radius: 30px;
+    &.activeButton {
+      background-color: #AFFFB6 !important;
+      color: #23272C !important;
+      padding: 12px 20px;
+      img {
+        filter: invert(100%) contrast(100%);
+      }
+    }
+  }
+  
+}
+.maxW80 {
+  max-width: 80px;
+}
+.maxW32 {
+  max-width: 32px;
+}
+.fs12 {
+  font-size: 12px;
+}
+.sideNavLinks {
+  .accordion {
+    .accordion-item {
+      .accordion-button {
+        border-radius: 30px;
+        box-shadow: none;
+        background-color: transparent;
+        color: #fff;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: 92% center;
+        background-size: 20px;
+        padding: 12px 24px;
+        &[aria-expanded="true"] {
+          background-color: #AFFFB6;
+          color: #23272C;
+          img {
+            filter: invert(100%) contrast(100%);
+          }
+        }
+        &::after {
+          display: none;
+          width: 0px;
+          height: 0px;
+        }
+        &:not(.collapsed) {
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+      }
+    }
+  }
+}
+.form-control {
+  &:focus {
+    outline:none;
+    box-shadow: none;
+  }
+}
+img {
+  width: auto;
+}
+.coloredCards {
+  .card {
+    position:relative;
+    &:before {
+      content:"";
+      width: 5px;
+      height: 84px;
+      top:50%;
+      left: 25px;
+      transform: translateY(-50%);
+      position: absolute;
+      border-radius: 5px;
+    }
+    &.bg-greenCard {
+      &:before {
+        background-color: #0EB01D;
+      }
+    }
+    &.bg-orangeCard {
+      &:before {
+        background-color: #FAAB3C;
+      }
+    }
+    &.bg-blueCard {
+      &:before {
+        background-color: #1F74EC;
+      }
+    }
+    &.bg-purpleCard {
+      &:before {
+        background-color: #4E1BD9;
+      }
+    }
+  }
+}
+.notification {
+  .count {
+    position: absolute;
+    top: -7px;
+    right: -9px;
+    background-color: #FAAB3C;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+  }
+}
+.card-title {
+  &.h5 {
+    font-size: 1.375rem;
+  }
+}
+.rs-picker {
+  &.rs-picker-default {
+    .rs-picker-toggle.rs-btn {
+      padding: 10px 32px 10px 13px;
+      border-color: #E0E4EA;
+      border-radius: 12px;
+      font-weight: 400;
+      background-image: url('/public/caretDown.svg');
+      background-repeat: no-repeat;
+      background-position: 88% center;
+      font-size: 16px;
+      color: #23272C;
+      input {
+        color: #23272C;
+        &::placeholder {
+          color: #23272C;
+          opacity: 1;
+        }
+        &::-ms-input-placeholder { 
+          color: #23272C;
+        }
+      }
+      .rs-picker-toggle-placeholder {
+        color: #23272C;        
+      }
+      .rs-picker-toggle-indicator {
+        .rs-picker-caret-icon {
+          display: none;
+        }
+        .rs-picker-clean {
+            top: 12px;
+            right: 11px;
+        }
+      }
+      
+    }
+  }
+}
+.rs-anim-fade.rs-anim-in {
+  left: auto !important;
+  right: 30px;
+}
+.sidebar {
+  min-height: 100vh;
+}
+.copyright {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+}
+.dots-dropdown::after {
+  display: none !important ;
+}
+.form-select:focus {
+  box-shadow: none;
+}
+.customSidebar {
+  position: fixed;
+  overflow-y: auto;
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.5);
+  }
+  .sideNavLinks {
+    padding-bottom: 50px;
+  }
+}
+
+.navbar-expand-lg {
+  .navbar-nav {
+    .nav-item {
+      &.customDropdown {
+        .dropdown-menu {
+          right: 0;
+          left: auto;
+          font-size: 15px;
+          .dropdown-item{
+            border: solid 0px 1px 0px 0px ;
+          }
+        }
+        .nav-link {
+          min-width: 30px;
+          min-height: 30px;
+          background-image: url('../../public/menuIcon.svg');
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.password-wrapper {
+  margin-bottom: 10px;
+}
+.password-wrapper .change-password-type .form-group {
+  width: 100%;
+}
+.password-wrapper .change-password-type .input-group-append {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.password-wrapper .change-password-type .input-group-append span.input-group-text {
+  background-color: transparent;
+  border: none;
+  padding: 10px 15px;
+}
+
+// Dynamic Forms Styling Start
+
+#__next {
+  .app {
+      .card {
+        + .card {
+          margin-top: 1rem;
+        }
+        .card-header {
+          padding: 1rem;
+        }
+        .card-body {
+          padding: 1rem;
+          .card-title {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+          }
+        }
+        .card-footer {
+          padding: 1rem;
+          text-align: end;
+        }
+      }
+  }
+}
+.dynamicFormWrapper {
+  text-shadow: none;
+}
+.accordion {
+  .accordion-header {
+    &.no-icon {
+      .accordion-button {
+        background-image: none !important;
+      }
+    }
+  }
+  .accordion-collapse {
+    .accordion-body {
+      .text-activeBg {
+        --bs-text-opacity: 1;
+        color: #fff !important;
+        &.active-link {
+          color: #afffb6 !important;
+        }
+      }
+    }
+
+  }
+}
+

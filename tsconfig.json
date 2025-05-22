@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "helper/ApiHook.js",
+    "components/reusableComponents/FormInputs/datepicker.tsx",
+    "helper/useAuth.js",
+    "components/reusableComponents/Table/simpletable.component.js"
+, "components/reusableGraphComponents/candleStickGraph.tsx", "pages/ag-charts.tsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
